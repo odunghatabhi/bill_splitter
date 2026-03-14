@@ -6,16 +6,31 @@ on:
       - main
 
 jobs:
-  sync-to-hub:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Install git-lfs
+        run: |
+          sudo apt-get update
+          sudo apt-get install git-lfs
+          git lfs install
 
       - name: Push to Hugging Face Space
-        uses: huggingface/huggingface_hub_action@v1
-        with:
-          repo-token: ${{ secrets.HF_TOKEN }}
-          repo-type: space
-          repo-id: abhisheko97/Bill_Splitter_Splitwise
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "github-actions"
+
+          git clone https://abhisheko97:$HF_TOKEN@huggingface.co/spaces/abhisheko97/Bill_Splitter_Splitwise space
+
+          rsync -av --exclude '.git' --delete ./ space/
+
+          cd space
+          git add .
+          git commit -m "Update from GitHub CI" || echo "No changes"
+          git push
