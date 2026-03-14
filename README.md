@@ -1,5 +1,4 @@
 ---
-metadata
 title: Bill Splitter Splitwise
 emoji: 🐠
 colorFrom: yellow
