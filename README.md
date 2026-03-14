@@ -1,4 +1,14 @@
-
+---
+metadata
+title: Bill Splitter Splitwise
+emoji: 🐠
+colorFrom: yellow
+colorTo: red
+sdk: gradio
+sdk_version: 6.5.1
+app_file: app.py
+pinned: false
+---
 # Bill Splitter
 
 [![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)](https://www.python.org/)
