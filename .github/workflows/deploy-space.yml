@@ -1,4 +1,4 @@
-name: Deploy to HF Space
+name: Deploy to Hugging Face Space
 
 on:
   push:
@@ -10,10 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-      - name: Push to Hugging Face
-        uses: huggingface/hub-action@v1
+      - name: Push to Hugging Face Space
+        uses: huggingface/huggingface_hub_action@v1
         with:
           repo-token: ${{ secrets.HF_TOKEN }}
           repo-type: space
