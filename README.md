@@ -1,6 +1,6 @@
 ---
 title: Bill Splitter Splitwise
-emoji: 🐠
+emoji: 💸
 colorFrom: yellow
 colorTo: red
 sdk: gradio
@@ -12,13 +12,20 @@ pinned: false
 
 [![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)](https://www.python.org/)
 [![Gradio](https://img.shields.io/badge/Gradio-UI-F97316)](https://www.gradio.app/)
-[![Google Gemini](https://img.shields.io/badge/Google-Gemini-4285F4?logo=google&logoColor=white)](https://ai.google.dev/)
+[![Google Gemini](https://img.shields.io/badge/AI-Gemini-blue?logo=google)](https://ai.google.dev/)
 [![Splitwise](https://img.shields.io/badge/Splitwise-Expense%20Sharing-1DBF73)](https://www.splitwise.com/)
-[![Hugging Face Spaces](https://img.shields.io/badge/Hugging%20Face-Spaces-FFD21E?logo=huggingface&logoColor=black)](https://huggingface.co/spaces/abhisheko97/Bill_Splitter_Splitwise)
+[![GitHub Actions](https://img.shields.io/github/actions/workflow/status/odunghatabhi/bill_splitter/deploy-space.yml?logo=githubactions&logoColor=white&label=Deploy)](https://github.com/odunghatabhi/bill_splitter/actions)
+[![Live App](https://img.shields.io/badge/Live%20App-Hugging%20Face%20Spaces-yellow?logo=huggingface)](https://huggingface.co/spaces/abhisheko97/Bill_Splitter_Splitwise)
+
 
 Split receipts with Gemini, review extracted line items, assign item-level shares across a group, and compute per-person totals. The repo also includes a Splitwise submission flow for local use.
 
 Live app: [Bill Splitter on Hugging Face Spaces](https://huggingface.co/spaces/abhisheko97/Bill_Splitter_Splitwise)
+
+## Prerequisites
+
+- [Google AI Studio](https://aistudio.google.com) API Key
+- [Splitwise API](https://secure.splitwise.com/) (For Using Splitwise Functionality)
 
 ## Features
 
@@ -33,7 +40,7 @@ Live app: [Bill Splitter on Hugging Face Spaces](https://huggingface.co/spaces/a
 
 The Hugging Face Spaces app is currently for receipt extraction and bill splitting only.
 
-The Splitwise feature is **not available right now on Hugging Face Spaces**. To use Splitwise, run the project locally with:
+The Splitwise feature is **not available right now on Hugging Face Spaces** due to personal access token issues. To use Splitwise, run the project locally with:
 
 ```bash
 python app.py
@@ -132,3 +139,7 @@ See [requirements.txt](/c:/Users/abhis/Documents/GitHub/bill_splitter/requiremen
 - `python-dotenv`
 - `google-genai`
 - `splitwise`
+
+## To Do
+
+Change splitwise login type from API key to OAuth
