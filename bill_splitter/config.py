@@ -21,5 +21,10 @@ class Settings:
     # Limits
     max_upload_mb: int = int(os.getenv("MAX_UPLOAD_MB", "20"))
 
+    # Splitwise-only tab gate
+    splitwise_only_username: str = os.getenv("SPLITWISE_ONLY_USERNAME", "")
+    splitwise_only_password: str = os.getenv("SPLITWISE_ONLY_PASSWORD", "")
+    splitwise_api_key: str = os.getenv("SPLITWISE_API_KEY", "")
+
 
 settings = Settings()
