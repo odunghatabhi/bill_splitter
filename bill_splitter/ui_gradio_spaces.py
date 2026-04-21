@@ -894,7 +894,9 @@ def do_splitwise_submit_direct(
         return "Enter at least one amount > 0."
 
     expense = Expense()
-    expense.setDescription((description or "").strip() or "Manual split")
+    expense.setDescription(
+     f"{(description or '').strip()} 🤗🔄".strip() or "🤗🔄 Manual split"
+    )
     expense.setGroupId(int(group_map[selected_group]))
     expense.setCost(format(total, "f"))
 
