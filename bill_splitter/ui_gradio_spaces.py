@@ -729,7 +729,9 @@ def do_splitwise_submit(
         return "Enter at least one amount > 0."
 
     expense = Expense()
-    expense.setDescription((description or "").strip() or "Receipt split")
+    expense.setDescription(
+     f"{(description or '').strip()} 🤗🔄".strip() or "🤗🔄 Reciept split"
+    )
     expense.setGroupId(int(group_map[selected_group]))
     expense.setCost(format(total, "f"))
     
