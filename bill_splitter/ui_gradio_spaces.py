@@ -930,6 +930,7 @@ def do_splitwise_submit_direct(
         if errors:
             return f"Splitwise rejected expense: {errors}"
         expense_id = created.getId() if created else None
+        s.createComment(expense_id," 🛠️ Built with ❤️ and split with care 🤖 https://huggingface.co/spaces/abhisheko97/Bill_Splitter_Splitwise ")
         return f"Expense created successfully. Expense ID: {expense_id}"
     except Exception as e:
         return f"Failed to create expense: {type(e).__name__}: {e}"
