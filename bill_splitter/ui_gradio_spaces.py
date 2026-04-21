@@ -732,7 +732,7 @@ def do_splitwise_submit(
     expense.setDescription((description or "").strip() or "Receipt split")
     expense.setGroupId(int(group_map[selected_group]))
     expense.setCost(format(total, "f"))
-
+    
     users: List[ExpenseUser] = []
     payer_row: Optional[ExpenseUser] = None
     for m in member_state:
@@ -765,6 +765,7 @@ def do_splitwise_submit(
         if errors:
             return f"Splitwise rejected expense: {errors}"
         expense_id = created.getId() if created else None
+        s.createComment(expense_id," 🛠️ Built with ❤️ and split with care 🤖 https://huggingface.co/spaces/abhisheko97/Bill_Splitter_Splitwise ")
         return f"Expense created successfully. Expense ID: {expense_id}"
     except Exception as e:
         return f"Failed to create expense: {type(e).__name__}: {e}"
